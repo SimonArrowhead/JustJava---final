@@ -77,11 +77,9 @@ public class MainActivity extends AppCompatActivity {
         priceMessage += "\n" + getString(R.string.thankYouJ);
 
         //sending email method
-        String[] emails = {"szymon@s.pl"};
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("*/*");
-        intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_EMAIL, emails);
+        intent.setData(Uri.parse("mailto:szymon@sdasd.pl"));
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subjectJ));
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
