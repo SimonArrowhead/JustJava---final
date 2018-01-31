@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
      */
     int quantity = 1;
     int pricePerCup = 10;
+    int price = 0;
 
 
     @Override
@@ -47,18 +48,14 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         String name;
         CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkboxCream);
-    //   if (checkBox1.isChecked()) boxCream = "Yes";
-    //    else boxCream = "No";
             boolean boxCream = checkBox1.isChecked();
         CheckBox checkBox2 = (CheckBox) findViewById(R.id.chocolate_checkbox);
-    //    if (checkBox2.isChecked()) boxChocolate = "Yes";
-    //     else boxChocolate = "No";
             boolean boxChocolate = checkBox2.isChecked();
 
         EditText getName = (EditText) findViewById(R.id.nameField);
         name = getName.getText().toString();
 
-        int price = calculatePrice(boxCream, boxChocolate);
+        calculatePrice();
 
         String creamYesNo;
         if(boxCream) creamYesNo = getString(R.string.Yes);
@@ -100,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        calculatePrice();
+        displayTotalPrice();
         displayQuantity(quantity);
     }
 
@@ -114,10 +113,16 @@ public class MainActivity extends AppCompatActivity {
             over100.show();
             return;
         }
+
+        calculatePrice();
+        displayTotalPrice();
         displayQuantity(quantity);
     }
 
-
+   public void ifChecked(View view){
+       calculatePrice();
+       displayTotalPrice();
+   }
     /**
      * This method displays the given quantity value on the screen.
      */
@@ -134,31 +139,28 @@ public class MainActivity extends AppCompatActivity {
      * @param boxChocolate checks if checkBox for Chocolate is checked and if condition is made
      *                     add 2 for price of toppings
      */
-    private int calculatePrice(boolean boxCream, boolean boxChocolate) {
+    private void calculatePrice() {
         int toppings = 0;
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkboxCream);
+        boolean boxCream = checkBox1.isChecked();
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean boxChocolate = checkBox2.isChecked();
         if (boxCream) toppings += 1;
 
         if (boxChocolate) toppings += 2;
 
 
-        return quantity * (pricePerCup + toppings);
+        price = quantity * (pricePerCup + toppings);
+
     }
 
     /**
-     * @param price      calculated price for the order
-     * @param trueFalse1 holds true or false if check box 1 is checked or not
-     * @param trueFalse2 holds true or false if check box 2 is checked or not
-     * @param name       String imported from the nameField
      * @return returns Order Summary
      */
-    private String createOrderSummary(String name, int price, String trueFalse1, String trueFalse2) {
-        String priceMessage = "Name: " + name;
-        priceMessage += "\nWith whipped cream: " + trueFalse1;
-        priceMessage += "\nWitch chocolate topping: " + trueFalse2;
-        priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: $ " + price;
-        priceMessage += "\nThank you! Have a nice day :)";
-        return priceMessage;
+    public void displayTotalPrice() {
+        String totalMessage = getString(R.string.totalJ, price);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText("" + totalMessage);
     }
 
 

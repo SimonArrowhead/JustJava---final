@@ -41,6 +41,7 @@
             android:text="@string/whipped_cream"
             android:textSize="@dimen/textSizeNormal"
             android:paddingStart="@dimen/marginLeftBig"
+            android:onClick="ifChecked"
             tools:ignore="RtlSymmetry" />
 
         <CheckBox
@@ -52,6 +53,7 @@
             android:text="@string/chocolate"
             android:textSize="@dimen/textSizeNormal"
             android:paddingStart="@dimen/paddingStartBig"
+            android:onClick="ifChecked"
             tools:ignore="RtlSymmetry" />
 
         <TextView
