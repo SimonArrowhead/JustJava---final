@@ -45,27 +45,34 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String boxCream;
-        String boxChocolate;
         String name;
         CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkboxCream);
-        if (checkBox1.isChecked()) boxCream = "Yes";
-        else boxCream = "No";
-
+    //   if (checkBox1.isChecked()) boxCream = "Yes";
+    //    else boxCream = "No";
+            boolean boxCream = checkBox1.isChecked();
         CheckBox checkBox2 = (CheckBox) findViewById(R.id.chocolate_checkbox);
-        if (checkBox2.isChecked()) boxChocolate = "Yes";
-        else boxChocolate = "No";
+    //    if (checkBox2.isChecked()) boxChocolate = "Yes";
+    //     else boxChocolate = "No";
+            boolean boxChocolate = checkBox2.isChecked();
 
         EditText getName = (EditText) findViewById(R.id.nameField);
         name = getName.getText().toString();
 
         int price = calculatePrice(boxCream, boxChocolate);
 
+        String creamYesNo;
+        if(boxCream) creamYesNo = getString(R.string.Yes);
+            else creamYesNo =getString(R.string.No);
+
+        String chocolateYesNo;
+        if (boxChocolate) chocolateYesNo = getString(R.string.Yes);
+            else chocolateYesNo = getString(R.string.No);
+
         //message send through email
         String priceMessage = getString(R.string.nameJ, name);
-        priceMessage += "\n" + getString(R.string.wCreamJ, boxCream);
-        priceMessage += "\n" + getString(R.string.wChocolateJ, boxChocolate);
-        priceMessage += "\n" + getString(R.string.quantityJ) + quantity;
+        priceMessage += "\n" + getString(R.string.wCreamJ, creamYesNo);
+        priceMessage += "\n" + getString(R.string.wChocolateJ, chocolateYesNo);
+        priceMessage += "\n" + getString(R.string.quantityJ, quantity);
         priceMessage += "\n" + getString(R.string.totalJ, price);
         priceMessage += "\n" + getString(R.string.thankYouJ);
 
@@ -129,11 +136,11 @@ public class MainActivity extends AppCompatActivity {
      * @param boxChocolate checks if checkBox for Chocolate is checked and if condition is made
      *                     add 2 for price of toppings
      */
-    private int calculatePrice(String boxCream, String boxChocolate) {
+    private int calculatePrice(boolean boxCream, boolean boxChocolate) {
         int toppings = 0;
-        if (boxCream == "Yes") toppings += 1;
+        if (boxCream) toppings += 1;
 
-        if (boxChocolate == "Yes") toppings += 2;
+        if (boxChocolate) toppings += 2;
 
 
         return quantity * (pricePerCup + toppings);

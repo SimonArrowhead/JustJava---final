@@ -3,7 +3,7 @@
     <string name="app_name">Just Java</string>
     <string name="quantity">Quantity</string>
     <string name="order">Order</string>
-    <string name="zero">0</string>
+    <string name="one">1</string>
     <string name="price" translatable="false">Price</string>
     <string name="money">Total: $0</string>
     <string name="minus" translatable="false">-</string>
@@ -17,8 +17,10 @@
     //MainActivity.java
     <string name="nameJ">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="wCreamJ">With whipped cream: <xliff:g id="boxCream" example="Yes/No">%s</xliff:g></string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
     <string name="wChocolateJ">Witch chocolate topping: <xliff:g id="boxChocolate" example="Yes/No">%s</xliff:g></string>
-    <string name="quantityJ">Quantity:</string>
+    <string name="quantityJ">Quantity: <xliff:g id="quantity" example="1">%d</xliff:g></string>
     <string name="totalJ">Total: $<xliff:g id="price" example="$10">%d</xliff:g></string>
     <string name="thankYouJ">Thank you! Have a nice day :)</string>
     <string name="subjectJ">Coffee Order</string>

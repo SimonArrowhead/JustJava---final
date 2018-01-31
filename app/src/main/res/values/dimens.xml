@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="paddingNormal">16dp</dimen>
+
     <dimen name="paddingLeftNormal">16dp</dimen>
     <dimen name="paddingRightNormal">16dp</dimen>
     <dimen name="paddingTopNormal">16dp</dimen>
     <dimen name="paddingBottomNormal">16dp</dimen>
-    <dimen name="paddingLeftSmall">1dp</dimen>
-    <dimen name="paddingRightSmall">16dp</dimen>
-    <dimen name="paddingTopSmall">16dp</dimen>
-    <dimen name="paddingBottomSmall">1dp</dimen>
+    <dimen name="paddingLeftSmall">12dp</dimen>
+    <dimen name="paddingRightSmall">12dp</dimen>
+    <dimen name="paddingTopSmall">12dp</dimen>
+    <dimen name="paddingBottomSmall">12dp</dimen>
+
     <dimen name="marginLeftNormal">16dp</dimen>
     <dimen name="marginRightNormal">16dp</dimen>
     <dimen name="marginTopNormal">16dp</dimen>
     <dimen name="marginBottomNormal">16dp</dimen>
+
     <dimen name="marginLeftBig">24dp</dimen>
     <dimen name="marginRightBig">24dp</dimen>
     <dimen name="marginTopBig">24dp</dimen>
     <dimen name="marginBottomBig">24dp</dimen>
+
+    <dimen name="textSizeNormal">16sp</dimen>
+
+    <dimen name="buttonWidth">48dp</dimen>
+    <dimen name="buttonHeight">48dp</dimen>
+
+
+    <dimen name="paddingStartBig">24dp</dimen>
+    <dimen name="paddingLeftBig">24dp</dimen>
 </resources>

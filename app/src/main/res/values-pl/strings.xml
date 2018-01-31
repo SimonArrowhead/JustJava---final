@@ -2,8 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Tylko Java</string>
     <string name="quantity">Ilość</string>
-    <string name="order">Zamow</string>
-    <string name="zero">0</string>
+    <string name="order">Zamów</string>
+    <string name="one">1</string>
     <string name="thankYouJ">Dziękujemy i życzymy miłego dnia!</string>
     <string name="money">Razem: $0</string>
     <string name="toppings">Dodatki</string>
@@ -13,8 +13,10 @@
     <string name="nameJ">Imię: <xliff:g id="name" example="Amy">%s</xliff:g></string>
     <string name="wCreamJ">Bita śmietana: <xliff:g id="boxCream" example="Yes/No">%s</xliff:g></string>
     <string name="wChocolateJ">Czekolada: <xliff:g id="boxChocolate" example="Yes/No">%s</xliff:g></string>
-    <string name="quantityJ">Ilość:</string>
+    <string name="quantityJ">Ilość: <xliff:g id="quantity" example="1">%d</xliff:g></string>
     <string name="totalJ">Razem: $<xliff:g id="price" example="$10">%d</xliff:g></string>
     <string name="subjectJ">Zamówienie na kawę</string>
     <string name="order_summary">Podsumowanie zamówienia</string>
+    <string name="Yes">Tak</string>
+    <string name="No">Nie</string>
 </resources>
