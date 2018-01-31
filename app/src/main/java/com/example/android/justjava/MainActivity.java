@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         //sending email method
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("*/*");
-        intent.setData(Uri.parse("mailto:szymon@sdasd.pl"));
+        intent.setData(Uri.parse("mailto:szymon.groth@gmail.com"));
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subjectJ));
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {

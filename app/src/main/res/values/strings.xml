@@ -5,7 +5,7 @@
     <string name="order">Order</string>
     <string name="one">1</string>
     <string name="price" translatable="false">Price</string>
-    <string name="money">Total: $0</string>
+    <string name="money">Total: $10</string>
     <string name="minus" translatable="false">-</string>
     <string name="plus" translatable="false">+</string>
     <string name="order_summary">Order Summary</string>
